@@ -1,7 +1,3 @@
-import React from "react";
+const PROJECTS = [{ projectname: "dice", linkofproject: "/Dice" }];
 
-const Constant = () => {
-  return <div>Constant</div>;
-};
-
-export default Constant;
+export default PROJECTS;
