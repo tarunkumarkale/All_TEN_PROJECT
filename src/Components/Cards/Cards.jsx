@@ -1,24 +1,24 @@
-// src/Components/Card.js
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ projectname, linkofproject }) => {
+const Card = ({ name, btn,image }) => {
   const navigate = useNavigate(); // Initialize the navigate function
 
   const handleNavigate = () => {
-    navigate(linkofproject); // Navigate to the dynamic link provided
+    navigate(btn); // Navigate to the dynamic link provided
   };
-
+console.log(name)
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+    <div className="flex items-center justify-start mx-2 min-h-screen  bg-gray-100">
+      <div className="w-[20%] rounded overflow-hidden shadow-lg bg-white">
+      <img src={image} alt="image" className="w-[100%] h-auto " />
         <div className="p-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4">
-            {projectname}
+            {name}
           </h2>
           <p className="text-gray-600 mb-6">
-            Explore the exciting projects and creative work done by John Doe.
-            Click the button below to learn more.
+        welcome to my project {name}.
           </p>
           <button
             onClick={handleNavigate} // Trigger navigation on click
