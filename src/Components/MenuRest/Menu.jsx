@@ -7,49 +7,6 @@ const Menu = () => {
   const [allmeals, setallmeals] = useState(menuResturent);
   const [searchQuery, setSearchQuery] = useState('');
 
-const menutype=[
-  {
-    name:'Grilled Chicken Salad',
-    type:'Lunch'
-  },
-  {
-    name:'Spaghetti Bolognese',
-    type:'Dinner'
-  },
-  {
-    name:'Vegetable Stir Fry',
-    type:'Dinner'
-  },
-  {
-    name:'Grilled Chicken Salad',
-    type:'Lunch'
-  },
-  {
-    name:'Classic Cheeseburger',
-    type:'Lunch'
-  },
-  {
-    name:'Pancake Breakfast',
-   Type: 'Breakfast'
-  },
-  {
-    name:'Seafood Paella',
-   type:'Dinner'
-  },
-  {
-    name:'Quinoa and Avocado Bowl',
-    type:'Lunch'
-  },
-  {
-    name:'Fruit Smoothie',
-    type:'Lunch'
-  },
-  {
-    name:'Margherita Pizza',
-    type:'Lunch'
-  },
-]
-
 
 const Fun = (category) => {
   if (category === 'All') {

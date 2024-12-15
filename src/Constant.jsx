@@ -1,7 +1,7 @@
 
 import DICE from  './Images/DICE.png' 
 import profileMenu from './Images/profileMenu.jpg'
-
+import todoimg from './Images/todoimg.png'
 
 const PROJECTS = [
   {
@@ -13,7 +13,13 @@ const PROJECTS = [
     projectname: "Hotel Menu", // Capitalized for readability
   linkofproject: "/menu", // Ensured the path is lowercase for consistency
     image:profileMenu // Assuming profileMenu is a valid variable containing the image
+  },{
+projectname:'Single curd',
+linkofproject:'/SingledataCurd',
+image:todoimg
   }
+  
+
 ];
 
 
