@@ -2,6 +2,7 @@
 import DICE from  './Images/DICE.png' 
 import profileMenu from './Images/profileMenu.jpg'
 import todoimg from './Images/todoimg.png'
+import AUTHIMAGES from './Images/AUTHIMAGES.png'
 
 const PROJECTS = [
   {
@@ -17,6 +18,11 @@ const PROJECTS = [
 projectname:'Single curd',
 linkofproject:'/SingledataCurd',
 image:todoimg
+  },
+  {
+    projectname:'Auth',
+    linkofproject: '/MyComponent',
+    image:AUTHIMAGES
   }
   
 
