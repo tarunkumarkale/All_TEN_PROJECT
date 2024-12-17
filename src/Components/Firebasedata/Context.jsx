@@ -9,7 +9,7 @@ export const FirebaseContext = createContext(null);
 export const GlobalContext = ({ children }) => {
   const [islogins, setIsLogins] = useState(false); // State for login status
   const auth = getAuth(app);
-
+  const db=getDatabase(app)
   useEffect(() => {
     // Check auth state
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -34,7 +34,7 @@ export const GlobalContext = ({ children }) => {
   };
 
   return (
-    <FirebaseContext.Provider value={{ Signup, SignIn, islogins }}>
+    <FirebaseContext.Provider value={{ Signup, SignIn, islogins,db }}>
       {children}
     </FirebaseContext.Provider>
   );
