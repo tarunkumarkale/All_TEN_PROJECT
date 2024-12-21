@@ -3,6 +3,7 @@ import DICE from  './Images/DICE.png'
 import profileMenu from './Images/profileMenu.jpg'
 import todoimg from './Images/todoimg.png'
 import AUTHIMAGES from './Images/AUTHIMAGES.png'
+import chat from './Images/chat.png'
 
 const PROJECTS = [
   {
@@ -23,6 +24,11 @@ image:todoimg
     projectname:'Auth',
     linkofproject: '/MyComponent',
     image:AUTHIMAGES
+  },
+  {
+    projectname:'Chatbot',
+    linkofproject:'/Chatbot',
+    image:chat
   }
   
 

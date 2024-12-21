@@ -6,6 +6,7 @@ import ToggleLogic from "./Components/DICE/ToggleLogic";
 import Menu from "./Components/MenuRest/Menu";
 import Task from "./Components/CurdTodo.jsx/Task";
 import MyComponent from './Components/Firebasedata/Mycomponents'
+import Chatbot from "./Components/bot/Chatbot";
 
 const App = () => {
   return (
@@ -18,7 +19,8 @@ const App = () => {
         <Route path="/SingledataCurd" element={<Task />} /> 
     
         <Route  path="/MyComponent"  element={<MyComponent/>}/>
-      
+        <Route path="/Chatbot"  element={<Chatbot/>} />
+    
       </Routes>
     </BrowserRouter>
     </>
