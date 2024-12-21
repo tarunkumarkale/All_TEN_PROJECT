@@ -1,37 +1,45 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Chatbot = () => {
 
-const currenthour=new Date().getHours()
-const [currenthou,setcurrenthour]=useState(currenthour)
-const [AmOrPm,setAmorPm]=useState('')
-const [colur,setcolur]=useState('')
-const [checkrealtime,setcheckrealtime]=useState('')
-useEffect(()=>{
-//    const display= currenthou>12? 'AM':'PM'
-if(currenthour>=0 && currenthou<12){
-setAmorPm('AM')
-setcolur('text-red-400')
-}
-else if(currenthour>=12 && currenthou<20){
-setAmorPm('AM')
-setcolur('text-green-400')
-}
-else{
-setAmorPm('AM')
-setcolur('text-blue-400')
+const [inp,setinp]=useState({
+    fname:'',
+    lname:'',
+    email:''
+})
+const [display,setdisplay]=useState()
+
+const fun=(e)=>{
+let {name,value}=e.target
+console.log(name)
+console.log(value)
+setinp((pre)=>( {...pre,[name]:value}))  // eska matlab hai pre intialy khali hai  uske unde data dalo bss  
 }
 
-setInterval(T,1000);
 
-},[currenthou])
+const Displaytext=(e)=>{
 
-const T=()=>setcheckrealtime(new Date().toLocaleTimeString())
- 
+    e.preventDefault()
+    let displayname=inp.fname
+    let displaylname=inp.lname
+    let displayemail=inp.email
+setdisplay( `first name is ${displayname}  and my last name  is ${displaylname}  and my email is ${displayemail}`)
+
+
+
+
+}
+
   return (
-    <div className={` ${colur} `}>
-running time live      
-<h1>{checkrealtime} {AmOrPm}</h1>
+    <div>
+
+    <form onSubmit={display}>
+<input type="text" className='bg-green-300' name='fname' onChange={fun} value={inp.fname} placeholder='enter you fname' />
+<input type="text" className='bg-green-300' name='lname' onChange={fun} value={inp.lname}  placeholder='enter your lname'/>
+<input type="text" className='bg-green-300' name='email' onChange={fun} value={inp.email}  placeholder='enter your email'/>
+ <p>{display}</p>
+<button onClick={Displaytext}>click</button>
+</form>
     </div>
   )
 }
