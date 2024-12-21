@@ -1,67 +1,29 @@
 import React, { useState } from "react";
-import Delete from './delete'
+import { FaRegEye, FaEyeSlash } from "react-icons/fa";
 
 const Chatbot = () => {
-  const [input, setInput] = useState(""); // Renamed `inp` to `input`
-  const [display, setDisplay] = useState([]);
-  const [editIndex, setEditIndex] = useState(null); // Renamed `editbtn` to `editIndex`
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Handles input change and editing
-  const handleInputChange = (e) => {
-    const data = e.target.value;
-    setInput(data);
-  };
-
-  // Adds or edits a display item
-  const handleAddOrEdit = () => {
-    if (editIndex !== null) {
-      setDisplay((prev) =>
-        prev.map((item, index) => (index === editIndex ? input : item))
-      );
-      setEditIndex(null); // Reset edit mode
-    } else {
-      setDisplay((prev) => [...prev, input]);
-    }
-    setInput(""); // Clear the input
-  };
-
-  // Deletes an item
-  const handleDelete = (index) => {
-    setDisplay((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  // Edits an item
-  const handleEdit = (index) => {
-    setInput(display[index]);
-    setEditIndex(index);
+  const toggleVisibility = () => {
+    setIsVisible((prev) => !prev);
   };
 
   return (
-    <div>
+    <div className="bg-slate-400 flex flex-row justify-between p-4 items-center">
       <input
-        type="text"
-        className="bg-green-300"
-        name="fname"
-        onChange={handleInputChange}
-        value={input}
-        placeholder="Enter your name"
+        type={isVisible ? "text" : "password"}
+        placeholder="Enter your password"
+        className="p-2 rounded border"
       />
-      <button onClick={handleAddOrEdit}>
-        {editIndex !== null ? "Update" : "Add"}
+      <button
+        onClick={toggleVisibility}
+        className="ml-4 text-xl flex items-center"
+      >
+        {isVisible ? <FaEyeSlash /> : <FaRegEye />}
       </button>
-
-      <p>
-        {display.map((item, index) => (
-          <Delete
-            key={index}
-            Editbtn={() => handleEdit(index)}
-            Delbtn={() => handleDelete(index)}
-            data={item}
-          />
-        ))}
-      </p>
     </div>
   );
 };
 
 export default Chatbot;
+
