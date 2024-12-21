@@ -1,47 +1,67 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import Delete from './delete'
 
 const Chatbot = () => {
+  const [input, setInput] = useState(""); // Renamed `inp` to `input`
+  const [display, setDisplay] = useState([]);
+  const [editIndex, setEditIndex] = useState(null); // Renamed `editbtn` to `editIndex`
 
-const [inp,setinp]=useState({
-    fname:'',
-    lname:'',
-    email:''
-})
-const [display,setdisplay]=useState()
+  // Handles input change and editing
+  const handleInputChange = (e) => {
+    const data = e.target.value;
+    setInput(data);
+  };
 
-const fun=(e)=>{
-let {name,value}=e.target
-console.log(name)
-console.log(value)
-setinp((pre)=>( {...pre,[name]:value}))  // eska matlab hai pre intialy khali hai  uske unde data dalo bss  
-}
+  // Adds or edits a display item
+  const handleAddOrEdit = () => {
+    if (editIndex !== null) {
+      setDisplay((prev) =>
+        prev.map((item, index) => (index === editIndex ? input : item))
+      );
+      setEditIndex(null); // Reset edit mode
+    } else {
+      setDisplay((prev) => [...prev, input]);
+    }
+    setInput(""); // Clear the input
+  };
 
+  // Deletes an item
+  const handleDelete = (index) => {
+    setDisplay((prev) => prev.filter((_, i) => i !== index));
+  };
 
-const Displaytext=(e)=>{
-
-    e.preventDefault()
-    let displayname=inp.fname
-    let displaylname=inp.lname
-    let displayemail=inp.email
-setdisplay( `first name is ${displayname}  and my last name  is ${displaylname}  and my email is ${displayemail}`)
-
-
-
-
-}
+  // Edits an item
+  const handleEdit = (index) => {
+    setInput(display[index]);
+    setEditIndex(index);
+  };
 
   return (
     <div>
+      <input
+        type="text"
+        className="bg-green-300"
+        name="fname"
+        onChange={handleInputChange}
+        value={input}
+        placeholder="Enter your name"
+      />
+      <button onClick={handleAddOrEdit}>
+        {editIndex !== null ? "Update" : "Add"}
+      </button>
 
-    <form onSubmit={display}>
-<input type="text" className='bg-green-300' name='fname' onChange={fun} value={inp.fname} placeholder='enter you fname' />
-<input type="text" className='bg-green-300' name='lname' onChange={fun} value={inp.lname}  placeholder='enter your lname'/>
-<input type="text" className='bg-green-300' name='email' onChange={fun} value={inp.email}  placeholder='enter your email'/>
- <p>{display}</p>
-<button onClick={Displaytext}>click</button>
-</form>
+      <p>
+        {display.map((item, index) => (
+          <Delete
+            key={index}
+            Editbtn={() => handleEdit(index)}
+            Delbtn={() => handleDelete(index)}
+            data={item}
+          />
+        ))}
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Chatbot
+export default Chatbot;
