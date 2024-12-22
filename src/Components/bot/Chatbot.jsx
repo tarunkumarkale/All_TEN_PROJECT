@@ -1,29 +1,34 @@
-import React, { useState } from "react";
-import { FaRegEye, FaEyeSlash } from "react-icons/fa";
+import React, { useState } from 'react'
 
 const Chatbot = () => {
-  const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    setIsVisible((prev) => !prev);
-  };
+let data=[{fname:'tarun',lname:'kale'},{fname:'deep',lname:'kdsjafklja'}]
+
+const [first,setfirst]= useState({fname:'',lname:''})
+const [second,setsecond]= useState(data)
+
+const check=(e)=>{
+let {name,value}=e.target
+setfirst((pre)=> ({...pre,[name]:value}))
+}
+
+
+const Hello=()=>{
+setsecond((pre)=>([...pre,first]))
+setfirst({fname:'',lname:''})
+}
+
+
 
   return (
-    <div className="bg-slate-400 flex flex-row justify-between p-4 items-center">
-      <input
-        type={isVisible ? "text" : "password"}
-        placeholder="Enter your password"
-        className="p-2 rounded border"
-      />
-      <button
-        onClick={toggleVisibility}
-        className="ml-4 text-xl flex items-center"
-      >
-        {isVisible ? <FaEyeSlash /> : <FaRegEye />}
-      </button>
+    <div>
+<input type="text"  onChange={check}   value={first.fname} name='fname' placeholder='enter your fname '  />
+<input type="text"  onChange={check}   value={first.lname} name='lname' placeholder='enter your lname '  />
+
+{second.map((ele,i)=>( <div> {ele.fname}  {ele.lname}  </div>))}
+<button onClick={Hello}>Add</button>
     </div>
-  );
-};
+  )
+}
 
-export default Chatbot;
-
+export default Chatbot

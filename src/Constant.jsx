@@ -29,6 +29,11 @@ image:todoimg
     projectname:'Chatbot',
     linkofproject:'/Chatbot',
     image:chat
+  },
+  {
+    projectname:'Passwordtoggle',
+    linkofproject:'/Passwordtogg',
+    image:chat
   }
   
 
