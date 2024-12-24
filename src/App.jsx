@@ -9,6 +9,7 @@ import MyComponent from './Components/Firebasedata/Mycomponents'
 // import Chatbot from "./Components/bot/Chatbot";
 import Passwordtogg from "./Components/passwordtoggle/Passwordtogg";
 import Chatbot from "./Components/bot/Chatbot";
+import Direct from "./Components/bot/Direct";
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
         <Route  path="/MyComponent"  element={<MyComponent/>}/>
         <Route path="/Passwordtogg"  element={<Passwordtogg/>} />
         <Route path="/Chatbot"  element={<Chatbot/>} />
+        <Route path='/Chatbot/:userid' element={<Direct />} />
+
     
       </Routes>
     </BrowserRouter>

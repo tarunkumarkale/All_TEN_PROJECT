@@ -1,34 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Chatbot = () => {
-
-let data=[{fname:'tarun',lname:'kale'},{fname:'deep',lname:'kdsjafklja'}]
-
-const [first,setfirst]= useState({fname:'',lname:''})
-const [second,setsecond]= useState(data)
-
-const check=(e)=>{
-let {name,value}=e.target
-setfirst((pre)=> ({...pre,[name]:value}))
-}
-
-
-const Hello=()=>{
-setsecond((pre)=>([...pre,first]))
-setfirst({fname:'',lname:''})
-}
-
-
-
   return (
     <div>
-<input type="text"  onChange={check}   value={first.fname} name='fname' placeholder='enter your fname '  />
-<input type="text"  onChange={check}   value={first.lname} name='lname' placeholder='enter your lname '  />
-
-{second.map((ele,i)=>( <div> {ele.fname}  {ele.lname}  </div>))}
-<button onClick={Hello}>Add</button>
+      <h1>Chatbot</h1>
+      <NavLink to="/Chatbot/1" className="bg-red-500">Link 1</NavLink>
+      <NavLink to="/Chatbot/2" className="bg-green-400">Link 2</NavLink>
+      <NavLink to="/Chatbot/3" className="bg-slate-500">Link 3</NavLink>
     </div>
-  )
-}
+  );
+};
 
-export default Chatbot
+export default Chatbot;
