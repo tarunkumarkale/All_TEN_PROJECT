@@ -26,7 +26,7 @@ image:todoimg
     image:AUTHIMAGES
   },
   {
-    projectname:'Chatbot',
+    projectname:'useParams',
     linkofproject:'/Chatbot',
     image:chat
   },
@@ -34,6 +34,11 @@ image:todoimg
     projectname:'Passwordtoggle',
     linkofproject:'/Passwordtogg',
     image:chat
+  },
+  {
+    projectname:'customhook',
+    linkofproject:'/custom',
+    image:todoimg
   }
   
 

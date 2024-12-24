@@ -10,6 +10,7 @@ import MyComponent from './Components/Firebasedata/Mycomponents'
 import Passwordtogg from "./Components/passwordtoggle/Passwordtogg";
 import Chatbot from "./Components/bot/Chatbot";
 import Direct from "./Components/bot/Direct";
+import Mathall from "./Components/custom/Mathall";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/Passwordtogg"  element={<Passwordtogg/>} />
         <Route path="/Chatbot"  element={<Chatbot/>} />
         <Route path='/Chatbot/:userid' element={<Direct />} />
+        <Route path='/custom' element={<Mathall/>} />
 
     
       </Routes>
