@@ -29,7 +29,7 @@ const App = () => {
         <Route path='/Chatbot/:userid' element={<Direct />} />
         <Route path='/custom' element={<Mathall/>} />
         {/* this is for practice */}
-        <Route path='/Practice' element={<Firstpra/>}/>
+        <Route path='/digitaltime' element={<Firstpra/>}/>
     
     
       </Routes>
