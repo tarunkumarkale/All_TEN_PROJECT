@@ -12,6 +12,7 @@ import Chatbot from "./Components/bot/Chatbot";
 import Direct from "./Components/bot/Direct";
 import Mathall from "./Components/custom/Mathall";
 import Firstpra from "./Components/Practices/Firstpra";
+import Ganesh from "./Ganesh";
 
 const App = () => {
   return (
@@ -31,7 +32,9 @@ const App = () => {
         {/* this is for practice */}
         <Route path='/digitaltime' element={<Firstpra/>}/>
     
-    
+  
+{/* 👿 praactice  */}
+<Route  path="/allreactpractice" element={<Ganesh/>}/>
       </Routes>
     </BrowserRouter>
     </>
