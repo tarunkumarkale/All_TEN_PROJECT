@@ -13,6 +13,9 @@ import Direct from "./Components/bot/Direct";
 import Mathall from "./Components/custom/Mathall";
 import Firstpra from "./Components/Practices/Firstpra";
 import Ganesh from "./Ganesh";
+import Realtimedatabase from "./Components/Firebasedata/Realtimedatabase";
+import FullFirebse from "./Components/Firebasedata/FullFirebse";
+
 
 const App = () => {
   return (
@@ -31,6 +34,8 @@ const App = () => {
         <Route path='/custom' element={<Mathall/>} />
         {/* this is for practice */}
         <Route path='/digitaltime' element={<Firstpra/>}/>
+        <Route path='/FullFirebse' element={<FullFirebse/>}/>
+        <Route path='/Realtimedatabase' element={<Realtimedatabase/>}/>
     
   
 {/* 👿 praactice  */}
@@ -42,4 +47,3 @@ const App = () => {
 };
 
 export default App;
-

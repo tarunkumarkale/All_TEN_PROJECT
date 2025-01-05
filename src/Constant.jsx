@@ -4,6 +4,7 @@ import profileMenu from './Images/profileMenu.jpg'
 import todoimg from './Images/todoimg.png'
 import AUTHIMAGES from './Images/AUTHIMAGES.png'
 import chat from './Images/chat.png'
+import  fire from './Images/fire.webp'
 
 const PROJECTS = [
   {
@@ -21,8 +22,8 @@ linkofproject:'/SingledataCurd',
 image:todoimg
   },
   {
-    projectname:'Auth',
-    linkofproject: '/MyComponent',
+    projectname:'All uses of firebase ',
+    linkofproject: '/FullFirebse',
     image:AUTHIMAGES
   },
   {
@@ -49,7 +50,7 @@ export default PROJECTS;
 
 
 export const AllImages= [{diceiamges:DICE}]
-
+export const firee=fire
 
 //////menu
 
