@@ -35,7 +35,7 @@ const FullFirebase = () => {
         <div className="flex flex-row">
           <button
             className="bg-slate-200 text-red-600 mr-5 p-3 text-lg font-bold"
-            onClick={() => navigate('/realtimedatabse')}
+            onClick={() => navigate('/Realtimedatabase')}
           >
             Realtime Database
           </button>
